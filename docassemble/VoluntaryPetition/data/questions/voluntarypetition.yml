@@ -1,4 +1,5 @@
 ---
+mandatory: true
 question: Here is your document.
 event: some_event
 attachment:
