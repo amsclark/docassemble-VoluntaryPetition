@@ -1,5 +1,10 @@
 features:
   javascript: datereplace.js
+  centered: false
+  labels above fields: true
+---
+modules:
+  - .courts_list
 ---
 mandatory: true
 question: Basic Identity and Contact Information
@@ -40,7 +45,56 @@ fields:
     code: states_list()
   - Zip: zip
   - County: county
-    
+  # MAILING ADDRESS
+  - note: <strong>Mailing Address </strong><hr>
+    js show if: val("mailing_different") == "1"
+  - Is your mailing address different from the address above?: mailing_different
+    input type: radio
+    choices: 
+      - Yes: 1
+      - No: 0
+  - Address: mail_address
+    js show if: val("mailing_different") == "1"
+  - Unit (if any): mail_unit
+    js show if: val("mailing_different") == "1"
+    required: false
+  - City: mail_city
+    js show if: val("mailing_different") == "1"
+  - State: mail_state
+    js show if: val("mailing_different") == "1"
+    code: states_list()
+  - Zip: mail_zip
+    js show if: val("mailing_different") == "1"
+  - County: mail_county
+    js show if: val("mailing_different") == "1"
+  # PREVIOUS ADDRESS
+  - note: <strong>Previous Address </strong><hr>
+    js show if: val("same_address_two_years") == "0"
+  - Have you lived at the same address for at least 730 days(2 years)?: same_address_two_years
+    input type: radio
+    choices:
+      - Yes: 1
+      - No: 0
+  - Have you lived at the same address for at least 180 days?: same_address_six_months
+    js show if: val("same_address_two_years") == "0"
+    input type: radio
+    choices:
+      - Yes: 1
+      - No: 0
+  - Address: prev_address
+    js show if: val("same_address_two_years") == "0"
+  - Unit (if any): prev_unit
+    js show if: val("same_address_two_years") == "0"
+    required: false
+  - City: prev_city
+    js show if: val("same_address_two_years") == "0"
+  - State: mail_state
+    js show if: val("same_address_two_years") == "0"
+    code: states_list()
+  - Zip: mail_zip
+    js show if: val("same_address_two_years") == "0"
+  - County: mail_county
+    js show if: val("same_address_two_years") == "0"
   # ALIASES
   - Have you used any aliases or other names (maiden names, prior legal names, aliases, nicknames) in the past eight years?: alias_1
     input type: radio
@@ -48,8 +102,7 @@ fields:
       - Yes: 1
       - No: 0
   - Have you used any other aliases in the past eight years: alias_2
-    js show if:
-      val("alias_1") == "1"
+    js show if: val("alias_1") == "1"
     input type: radio
     choices: 
       - Yes: 1
@@ -61,8 +114,7 @@ fields:
       - Yes: 1
       - No: 0
   - Have you used another business or Employer Identification Number (EIN) in the last 8 years?: biz_2
-    js show if: 
-      val("biz_1") == "1"
+    js show if: val("biz_1") == "1"
     input type: radio
     choices: 
       - Yes: 1
@@ -79,41 +131,124 @@ fields:
     choices: 
       - Yes: 1
       - No: 0
-    js show if:
-      val("marital") == "married" || val("marital") == "separated"
-  # OTHER BANKRUPTCIES
-  - note: <strong>Prior and/or Pending Bankruptcy Cases</strong><hr>
-    js show if:
-      val("other_bkcys") == "1"
-  - Have you filed a bankruptcy case in the last 8 years?: other_bkcys
+    js show if: val("marital") == "married" || val("marital") == "separated"
+  # Prior BANKRUPTCIES
+  - note: <strong>Prior Bankruptcy Cases</strong><hr>
+    js show if: val("prior_bkcys") == "1" 
+  - Have you filed a bankruptcy case in the last 8 years?: prior_bkcys
     input type: radio
     choices: 
       - Yes: 1
       - No: 0
+  - What district did you file it in?: prior_bkcy_district
+    js show if: val("prior_bkcys") == "1" 
+    code: courts_list
+  - Case Number: prior_bkcy_case_number
+    js show if: val("prior_bkcys") == "1" 
+  - Date Filed: prior_bkcy_filed_date
+    js show if: val("prior_bkcys") == "1" 
+    datatype: date
+  - Was the case dismissed (you did not complete the bankruptcy)?: prior_bkcy_dismissed
+    js show if: val("prior_bkcys") == "1" 
+  - Date Debt Discharged: prior_bkcy_discharged
+    js show if: val("prior_bkcys") == "1" && val("prior_bkcy_dismissed") == "0"
+    datatype: date
+  - Date Bankruptcy Petition Dismissed: prior_bkcy_dismissed_date
+    js show if: val("prior_bkcys") == "1" && val("prior_bkcy_dismissed") == "1"
+    datatype: date
+  # OTHER RELATED BANKRUPTCIES
+  - note: <strong>Other Pending Bankruptcy Cases</strong><hr>
+    js show if: val("other_bkcys") == "1"
+  - Are any bankruptcy cases pending or being filed by your spouse, a business partner, or an affiliate?: other_bkcys
+    input type: radio
+    choices: 
+      - Yes: 1
+      - No: 0
+  - What is the name of the other debtor?: other_debtor
+    js show if: val("other_bkcys") == "1"
+  - Relationship to you?: other_debtor_relationship
+    js show if: val("other_bkcys") == "1"
+    choices:
+      - Spouse
+      - Business Partner
+      - Affiliate
+      - Other
+  - Case Number: other_bkcy_case_number
+    js show if: val("other_bkcys") == "1"
+  - Date Filed: other_bkcy_date_filed
+    js show if: val("other_bkcys") == "1"
+    datatype: date
+  - District (if known): other_bkcy_district
+    js show if: val("other_bkcys") == "1"
+    required: false
+    code: courts_list
   # DEBTORS WHO ARE TENANTS OF RESIDENTIAL PROPERTY
   - note: <strong>Debtors Who Reside as Tenants of Residential Property</strong><hr>
-    js show if:
-      val("eviction_pending") == "1"
+    js show if: val("eviction_pending") == "1"
   - Do you have an eviction pending against you?: eviction_pending
     input type: radio
     choices: 
       - Yes: 1
       - No: 0
+  - Landlord's Name: landlord_name
+    js show if: val("eviction_pending") == "1"
+  - Landlord's Street Address: landlord_address
+    js show if: val("eviction_pending") == "1"
+  - Landlord's Unit/Suite Number (if any): landlord_unit
+    required: false
+    js show if: val("eviction_pending") == "1"
+  - Landlord's City: landlord_city
+    js show if: val("eviction_pending") == "1"
+  - Landlord's State: landlord_state
+    js show if: val("eviction_pending") == "1"
+    code: states_list()
+  - Landlord's Zip Code: landlord_zip
+    js show if: val("eviction_pending") == "1"
   # BUSINESS OWNED AS A SOLE PROPRIETORSHIP
   - note: <strong>Business Owned as a Sole Proprietor</strong><hr>
-    js show if:
-      val("owns_sole_proprietorship") == "1"
+    js show if: val("owns_sole_proprietorship") == "1"
   - Are you the sole proprietor of a full- or part-time business?: owns_sole_proprietorship
     input type: radio
     choices:
       - Yes: 1
       - No: 0
+  - Business Name: sole_prop_biz_name
+    js show if: val("owns_sole_proprietorship") == "1"
+  - Business Street Address: sole_prop_biz_address
+    js show if: val("owns_sole_proprietorship") == "1"
+  - Business Unit/Suite Number (if any): sole_prop_biz_unit
+    required: false
+    js show if: val("owns_sole_proprietorship") == "1"
+  - Business City: sole_prop_biz_city
+    js show if: val("owns_sole_proprietorship") == "1"
+  - Business State: sole_prop_biz_state
+    js show if: val("owns_sole_proprietorship") == "1"
+    code: states_list()
+  - Business Zip: sole_prop_biz_zip
+    js show if: val("owns_sole_proprietorship") == "1"
   # HAZARDOUS PROPERTY OR PROPERTY THAT NEEDS IMMEDIATE ATTENTION
   - note: <strong>Hazardous Property or Property That Needs Immediate Attention</strong><hr>
-    js show if: 
-      val("hazardous_property") == "1"
+    js show if: val("hazardous_property") == "1"
   - Do you or have any property that needs immediate attention or that poses or is alleged to pose a threat of imminent and identifiable harm to public health or safety?: hazardous_property
     input type: radio
     choices: 
       - Yes: 1
       - No: 0
+  - Please describe the hazard: hazard_description
+    input type: area
+    js show if: val("hazardous_property") == "1"
+  - Please explain why immediate attention is needed: hazard_immediacy
+    input type: area
+    js show if: val("hazardous_property") == "1"
+  - Hazardous Property Street Address: hazardous_address
+    js show if: val("hazardous_property") == "1"
+  - Hazardous Property Unit/Suite Number (if any): hazardous_unit
+    required: false
+    js show if: val("hazardous_property") == "1"
+  - Hazardous Property City: hazardous_city
+    js show if: val("hazardous_property") == "1"
+  - Hazardous Property State: hazardous_state
+    js show if: val("hazardous_property") == "1"
+    code: states_list()
+  - Hazardous Property Zip: hazardous_zip
+    js show if: val("hazardous_property") == "1"
