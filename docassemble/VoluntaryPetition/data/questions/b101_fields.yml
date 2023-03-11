@@ -1,0 +1,171 @@
+---
+mandatory: true
+right: 
+question: Here is your document.
+event: some_event
+attachment:
+  - name: b_101
+    filename: b_101
+    pdf template file: b_101.pdf
+    fields:
+      - "Bankruptcy District Information": |
+          <PDFObjRef:1712>
+      - "Case number1": something
+      - "Check Box1": No
+      - "Check Box2": No
+      - "Debtor1.First name": something
+      - "Debtor2.First name": something
+      - "Debtor1.Middle name": something
+      - "Debtor2.Middle name_2": something
+      - "Debtor1.Last name": something
+      - "Debtor2.Last name": something
+      - "Debtor1.Suffix Sr Jr II III": something
+      - "Suffix Sr Jr II III_2": something
+      - "Debtor1.First name_3": something
+      - "Debtor2.First name_4": something
+      - "Debtor1.Middle name_3": something
+      - "Debtor2.Middle name_4": something
+      - "Debtor2.Last name_4": something
+      - "Debtor1.Last name_3": something
+      - "Debtor2.First name_6": something
+      - "Debtor1.First name_5": something
+      - "Debtor2.Middle name_6": something
+      - "Debtor1.Middle name_5": something
+      - "Debtor2.Last name_6": something
+      - "Debtor1.Last name_5": something
+      - "Debtor2.Business name": something
+      - "Debtor1.Business name": something
+      - "Debtor2.Business name_4": something
+      - "Debtor1.Business name_3": something
+      - "Debtor2 SSNum": something
+      - "Debtor1.SSNum": something
+      - "Debtor1 Tax Payer IDNum": something
+      - "Debtor2.Tax Payer IDNum": something
+      - "Debtor1.Name": something
+      - "Debtor2.Employer Identification Number1": something
+      - "Debtor1.Employer Identification Number1": something
+      - "Debtor2 Employer Identification Number2": something
+      - "Debtor1.Employer Identification Number2": something
+      - "Debtor1.Street": something
+      - "Debtor2.Street": something
+      - "Debtor2.Street2": something
+      - "Debtor1.Street1": something
+      - "Debtor2.State": something
+      - "Debtor2.ZIP": something
+      - "Debtor1.State": something
+      - "Debtor1.City": something
+      - "Debtor1.ZIP Code": something
+      - "Debtor2.City": something
+      - "County_2": something
+      - "Debtor1.County": something
+      - "Debtor1.Street_2": something
+      - "Debtor2.Street_2": something
+      - "Debtor1.PO Box": something
+      - "Debtor2.PO Box": something
+      - "Debtor2.City_2": something
+      - "Debtor2.State_2": something
+      - "ZIP Code_4": something
+      - "Debtor1.ZIP Code_2": something
+      - "Debtor1.State_2": something
+      - "Debtor1.City_2": something
+      - "Check Box5": No
+      - "Check Box6": No
+      - "Debtor1.See 28 USC  1408 1": something
+      - "Debtor2.See 28 USC  1408 1_2": something
+      - "Debtor2.See 28 USC  1408 2_2": something
+      - "Debtor1.See 28 USC  1408 2": something
+      - "Debtor1.See 28 USC  1408 3": something
+      - "Debtor2.See 28 USC  1408 3_2": something
+      - "Debtor1.See 28 USC  1408 4": something
+      - "Debtor2.See 28 USC  1408 4_2": something
+      - "Check Box7": No
+      - "Check Box8": No
+      - "District": something
+      - "When": something
+      - "Case number": something
+      - "District_2": something
+      - "When_2": something
+      - "Case number_2": something
+      - "District_3": something
+      - "When_3": something
+      - "Case number_3": something
+      - "Check Box9": No
+      - "Debtor": something
+      - "Relationship to you": something
+      - "District_4": something
+      - "When_4": something
+      - "Case number if known_3": something
+      - "Debtor_2": something
+      - "Relationship to you_2": something
+      - "District_5": something
+      - "When_5": something
+      - "Case number if known_4": something
+      - "Check Box10": No
+      - "Check Box11": No
+      - "Check Box12": No
+      - "Name of business if any": something
+      - "Business Street address": something
+      - "Business Street address2": something
+      - "Business City": something
+      - "Business State": something
+      - "ZIP Code_5": something
+      - "Check Box13": No
+      - "Check Box14": No
+      - "Check Box15": No
+      - "What is the hazard1": something
+      - "What is the hazard2": something
+      - "If immediate attention is needed why is it needed1": something
+      - "If immediate attention is needed why is it needed2": something
+      - "Street_6": something
+      - "Street_7": something
+      - "City_2": something
+      - "State_6": something
+      - "ZIP Code_6": something
+      - "Check Box16": No
+      - "Check Box17": No
+      - "Check Box16A": No
+      - "Check Box17A": No
+      - "Check Box18": No
+      - "Check Box19": No
+      - "16c State the type of debts you owe that are not consumer debts or business debts": something
+      - "Check Box20": No
+      - "Check Box20A": No
+      - "Check Box21": No
+      - "Check Box22": No
+      - "Check Box23": No
+      - "Debtor1.signature": something
+      - "Debtor2.signature": something
+      - "Debtor2.Executed on": something
+      - "Executed on": something
+      - "Attorney.Sig": something
+      - "Attorney.Date signed": something
+      - "Attorney.Printed name": something
+      - "Attorney.Firm name": something
+      - "Attorney.Street address_2": something
+      - "Attorney.Street address_3": something
+      - "Attorney.City": something
+      - "Attorney.State": something
+      - "Attorney.Zip": something
+      - "Attorney.phone": something
+      - "Attorney.Email address": something
+      - "Attorney.Bar number": something
+      - "Attorney.Bar State": something
+      - "Check Box24": No
+      - "Check Box25": No
+      - "Check Box26": No
+      - "Name of person payed to help file": something
+      - "Debtor1.Signature": something
+      - "Debtor2.Signature": something
+      - "Debtor1.Date signed": something
+      - "Debtor2.Date signed": something
+      - "Debtor1.Contact phone_2": something
+      - "Debtor2.Contact phone": something
+      - "Debtor1.Cell phone": something
+      - "Debtor2.Cell phone": something
+      - "Debtor1.Email address_2": something
+      - "Debtor2.Email address": something
+      - "Button.Print1": No
+      - "Button.SaveAs": No
+      - "attach": No
+      - "Button.Reset": No
+---

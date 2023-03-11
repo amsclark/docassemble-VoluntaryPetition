@@ -1,0 +1,119 @@
+features:
+  javascript: datereplace.js
+---
+mandatory: true
+question: Basic Identity and Contact Information
+subquestion: First we need to gather some basic information about you (and a spouse if you have one). Please complete the fields below related to your name, contact information, previous bankruptcies and businesses. 
+fields: 
+  - note: <strong>Name</strong><hr>
+  - First Name: first_name
+  - Middle Name: middle_name
+    required: false
+  - Last Name: last_name
+  - Suffix: suffix
+    required: false
+  - note: <strong>Telephone Numbers/Email Addresses</strong><hr>
+  - Contact Phone: contact_phone
+  - Cell Phone: cell_phone
+    required: false
+  - Email: email
+  - note: <strong>Identity</strong><hr>
+  - Date of Birth: dob
+    datatype: date
+  - Social Security Number: ssn
+    required: false
+  - Driver's License Number: dl_number
+    required: false
+  - Driver's License Expiration Date: dl_exp
+    required: false
+    datatype: date
+  - Driver's License State: dl_state
+    required: false
+    code: states_list()
+
+  - note: <strong>Address </strong><hr>
+  - Address: address
+  - Unit (if any): unit
+    required: false
+  - City: city
+  - State: state
+    code: states_list()
+  - Zip: zip
+  - County: county
+    
+  # ALIASES
+  - Have you used any aliases or other names (maiden names, prior legal names, aliases, nicknames) in the past eight years?: alias_1
+    input type: radio
+    choices: 
+      - Yes: 1
+      - No: 0
+  - Have you used any other aliases in the past eight years: alias_2
+    js show if:
+      val("alias_1") == "1"
+    input type: radio
+    choices: 
+      - Yes: 1
+      - No: 0     
+  # BUSINESS NAMES
+  - Have you used any business or Employer Identification Numbers (EIN) in the last 8 years?: biz_1
+    input type: radio
+    choices: 
+      - Yes: 1
+      - No: 0
+  - Have you used another business or Employer Identification Number (EIN) in the last 8 years?: biz_2
+    js show if: 
+      val("biz_1") == "1"
+    input type: radio
+    choices: 
+      - Yes: 1
+      - No: 0
+  # MARITAL STATUS  
+  - Marital Status: marital
+    choices:
+      - Never Married: single
+      - Married and living together: married
+      - Widowed: widowed
+      - Married and living apart: separated
+      - Divorced: divorced
+  - Are you filing jointly with your spouse?: joint_filing
+    choices: 
+      - Yes: 1
+      - No: 0
+    js show if:
+      val("marital") == "married" || val("marital") == "separated"
+  # OTHER BANKRUPTCIES
+  - note: <strong>Prior and/or Pending Bankruptcy Cases</strong><hr>
+    js show if:
+      val("other_bkcys") == "1"
+  - Have you filed a bankruptcy case in the last 8 years?: other_bkcys
+    input type: radio
+    choices: 
+      - Yes: 1
+      - No: 0
+  # DEBTORS WHO ARE TENANTS OF RESIDENTIAL PROPERTY
+  - note: <strong>Debtors Who Reside as Tenants of Residential Property</strong><hr>
+    js show if:
+      val("eviction_pending") == "1"
+  - Do you have an eviction pending against you?: eviction_pending
+    input type: radio
+    choices: 
+      - Yes: 1
+      - No: 0
+  # BUSINESS OWNED AS A SOLE PROPRIETORSHIP
+  - note: <strong>Business Owned as a Sole Proprietor</strong><hr>
+    js show if:
+      val("owns_sole_proprietorship") == "1"
+  - Are you the sole proprietor of a full- or part-time business?: owns_sole_proprietorship
+    input type: radio
+    choices:
+      - Yes: 1
+      - No: 0
+  # HAZARDOUS PROPERTY OR PROPERTY THAT NEEDS IMMEDIATE ATTENTION
+  - note: <strong>Hazardous Property or Property That Needs Immediate Attention</strong><hr>
+    js show if: 
+      val("hazardous_property") == "1"
+  - Do you or have any property that needs immediate attention or that poses or is alleged to pose a threat of imminent and identifiable harm to public health or safety?: hazardous_property
+    input type: radio
+    choices: 
+      - Yes: 1
+      - No: 0
