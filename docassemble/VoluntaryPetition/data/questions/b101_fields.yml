@@ -5,18 +5,19 @@ event: some_event
 attachment:
   - name: b_101
     filename: b_101
-    pdf template file: b_101.pdf
+    pdf template file: vol_petition_fixed_fields.pdf
     fields:
       - "Bankruptcy District Information": District of Nebraska
-      - "Case number1": 
-      # The checkbox for "Chapter 7" Needs to be renamed so it can be checked.
+      - "Case number1": something
+      - "CheckBox Chapter 7": No
+      - "CheckBox Amended Filing": No
       - "Debtor1 First name": ${ first_name }
       - "Debtor2.First name": something
-      - "Debtor1.Middle name": something
+      - "Debtor1 Middle name": something
       - "Debtor2.Middle name_2": something
-      - "Debtor1.Last name": something
+      - "Debtor1 Last name": something
       - "Debtor2.Last name": something
-      - "Debtor1.Suffix Sr Jr II III": something
+      - "Debtor1 Suffix Sr Jr II III": something
       - "Suffix Sr Jr II III_2": something
       - "Debtor1.First name_3": something
       - "Debtor2.First name_4": something
@@ -75,6 +76,7 @@ attachment:
       - "Debtor2.See 28 USC  1408 3_2": something
       - "Debtor1.See 28 USC  1408 4": something
       - "Debtor2.See 28 USC  1408 4_2": something
+      - "Check Box1": No
       - "Check Box7": No
       - "Check Box8": No
       - "District": something
@@ -161,8 +163,4 @@ attachment:
       - "Debtor2.Cell phone": something
       - "Debtor1.Email address_2": something
       - "Debtor2.Email address": something
-      - "Button.Print1": No
-      - "Button.SaveAs": No
-      - "attach": No
-      - "Button.Reset": No
 ---
