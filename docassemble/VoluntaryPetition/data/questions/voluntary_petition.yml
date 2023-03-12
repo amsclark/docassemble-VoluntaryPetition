@@ -1,0 +1,24 @@
+---
+metadata:
+  title: Voluntary Petition for Individuals Filing for Bankruptcy
+  short title: Voluntary Petition
+  authors:
+    - name: Alex Clark
+      organization: Clark Management Consulting
+---
+modules:
+  - .courts_list
+---
+features:
+  javascript: datereplace.js
+  centered: false
+  labels above fields: true
+---
+include:
+  - basic_information.yml
+  - b101_fields.yml
+---
+mandatory: true
+code: |
+  first_name
+  finished_doc

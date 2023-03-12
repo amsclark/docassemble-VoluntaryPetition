@@ -1,7 +1,5 @@
-
 ---
-mandatory: true
-right: 
+sets: finished_doc
 question: Here is your document.
 event: some_event
 attachment:
@@ -9,12 +7,10 @@ attachment:
     filename: b_101
     pdf template file: b_101.pdf
     fields:
-      - "Bankruptcy District Information": |
-          <PDFObjRef:1712>
-      - "Case number1": something
-      - "Check Box1": No
-      - "Check Box2": No
-      - "Debtor1.First name": something
+      - "Bankruptcy District Information": District of Nebraska
+      - "Case number1": 
+      # The checkbox for "Chapter 7" Needs to be renamed so it can be checked.
+      - "Debtor1 First name": ${ first_name }
       - "Debtor2.First name": something
       - "Debtor1.Middle name": something
       - "Debtor2.Middle name_2": something
