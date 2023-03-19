@@ -1,0 +1,150 @@
+---
+question: Spouse Basic Identity and Contact Information
+subquestion: Please complete the fields below related to your spouse.
+fields: 
+  - note: <strong>Name</strong><hr>
+  - First Name: spouse_first_name
+    default: Betty
+  - Middle Name: spouse_middle_name
+    default: Q
+    required: false
+  - Last Name: spouse_last_name
+    default: Wayne
+  - Suffix: spouse_suffix
+    default: jr.
+    required: false
+  - note: <strong>Telephone Numbers/Email Addresses</strong><hr>
+  - Contact Phone: spouse_contact_phone
+    default: 555-555-5555
+  - Cell Phone: spouse_cell_phone
+    default: 777-777-7777
+    required: false
+  - Email: spouse_email
+    default: betty@example.com
+  - note: <strong>Identity</strong><hr>
+    # does DOB need to be asked even?
+  - Date of Birth: spouse_dob
+    # fix the datepicker, it only goes to 1975
+    default: 1980-05-05
+    datatype: date
+  - Social Security Number: spouse_ssn
+    default: 555-55-5555
+    required: false
+    #why is drivers license asked?
+  - Driver's License Number: spouse_dl_number
+    default: H12345678
+    required: false
+  - Driver's License Expiration Date: spouse_dl_exp
+    default: 1980-06-06
+    required: false
+    datatype: date
+  - Driver's License State: spouse_dl_state
+    default: Nebraska
+    required: false
+    code: states_list()
+  - Does your spouse live at a different address than you?: spouse_living_separate
+    input type: radio
+    default: 0
+    choices:
+      - Yes: 1
+      - No: 0
+  - note: <strong>Address </strong><hr>
+  - Address: spouse_address
+    default: 123 Fake Street
+    js show if: val("spouse_living_seperate") == "1"
+  - Unit (if any): spouse_unit
+    default: 23
+    required: false
+    js show if: val("spouse_living_seperate") == "1"
+  - City: spouse_city
+    default: Gotham City
+    js show if: val("spouse_living_seperate") == "1"
+  - State: spouse_state
+    default: New York
+    code: states_list()
+    js show if: val("spouse_living_seperate") == "1"
+  - Zip: spouse_zip_code
+    default: 22222
+    js show if: val("spouse_living_seperate") == "1"
+  - County: county
+    default: Douglas County
+    js show if: val("spouse_living_seperate") == "1"
+  # MAILING ADDRESS
+  - note: <strong>Mailing Address </strong><hr>
+    js show if: val("spouse_mailing_different") == "1"
+  - Does your spouse have their own mailing address?: spouse_mailing_different
+    input type: radio
+    default: 1
+    choices: 
+      - Yes: 1
+      - No: 0
+  - Address: spouse_mail_address
+    default: 123 Mail Street
+    js show if: val("spouse_mailing_different") == "1"
+  - Unit (if any): spouse_mail_unit
+    default: 25
+    js show if: val("spouse_mailing_different") == "1"
+    required: false
+  - City: spouse_mail_city
+    default: Metropolis
+    js show if: val("spouse_mailing_different") == "1"
+  - State: spouse_mail_state
+    default: Illinois
+    js show if: val("spouse_mailing_different") == "1"
+    code: states_list()
+  - Zip: spouse_mail_zip
+    default: 54321
+    js show if: val("spouse_mailing_different") == "1"
+  - County: spouse_mail_county
+    default: Lancaster
+    js show if: val("spouse_mailing_different") == "1"
+  # PREVIOUS ADDRESS
+  - Over the last 180 days, has your spouse lived in the district of Nebraska longer than any other district?: spouse_this_district_six_months
+    input type: radio
+    default: 0
+    choices:
+      - Yes: 1
+      - No: 0
+  - Why is your spouse filing for bankruptcy in Nebraska instead of another district?: spouse_reason_this_district
+    js show if: val("spouse_this_district_six_months") == "0"
+  # ALIASES
+  - Have you used any aliases or other names (maiden names, prior legal names, aliases, nicknames) in the past eight years?: used_alias
+    input type: radio
+    default: 1
+    choices: 
+      - Yes: 1
+      - No: 0
+  - What alias or other name did you use?: spouse_alias_1
+    default: Fake McFakeName
+    js show if: val("used_alias") == "1"
+  - Have you used any other aliases in the past eight years: used_another_alias
+    js show if: val("used_alias") == "1"
+    input type: radio
+    default: 1
+    choices: 
+      - Yes: 1
+      - No: 0     
+  - What other alias or other name did you use?: spouse_alias_2
+    default: Ali As
+    js show if: val("used_another_alias") == "1"
+  # BUSINESS NAMES
+  - Have you used a business or Employer Identification Number (EIN) in the last 8 years?: spouse_biz_1
+    input type: radio
+    default: 1
+    choices: 
+      - Yes: 1
+      - No: 0
+  - Please list the business name and/or EIN used: spouse_business_1
+    default: Acme
+    js show if: val("spouse_biz_1") == "1"
+  - Have you used another business or Employer Identification Number (EIN) in the last 8 years?: spouse_biz_2
+    js show if: val("spouse_biz_1") == "1"
+    default: 1
+    input type: radio
+    choices: 
+      - Yes: 1
+      - No: 0
+  - Please list the other business name and/or EINS used: spouse_business_2
+    default: Contoso
+    js show if: val("spouse_biz_2") == "1"
+

@@ -16,9 +16,94 @@ features:
 ---
 include:
   - basic_information.yml
+  - spouse_basic_information.yml
   - b101_fields.yml
 ---
 mandatory: true
 code: |
   first_name
+  if defined('joint_filing') and joint_filing == '1':
+    spouse_first_name
+  # SET UNSET FIELDS SO THE FORM DOES NOT TRIGGER THEIR COLLECTION
+  if not defined("first_name"):
+    first_name = ""
+  if not defined("middle_name"):
+    middle_name = ""
+  if not defined("last_name"):    
+    last_name = ""
+  if not defined("suffix"):    
+    suffix = ""
+  if not defined("business_1"):    
+    business_1 = ""
+  if not defined("business_2"):    
+    business_2 = ""
+  if not defined("ssn"):    
+    ssn = ""
+  if not defined("address"):    
+    address = ""
+  if not defined("unit"):    
+    unit = ""
+  if not defined("state"):    
+    state = ""
+  if not defined("city"):    
+    city = ""
+  if not defined("zip_code"):    
+    zip_code = ""
+  if not defined("contact_phone"):    
+    contact_phone = ""
+  if not defined("cell_phone"):    
+    cell_phone = ""
+  if not defined("email"):    
+    email = ""
+  # SPOUSE FIELDS
+  if not defined("spouse_first_name"):  
+    spouse_first_name = ""
+  if not defined("spouse_middle_name"):
+    spouse_middle_name = ""
+  if not defined("spouse_last_name"):
+    spouse_last_name = ""
+  if not defined("spouse_suffix"):  
+    spouse_suffix = ""
+  if not defined("spouse_ssn"):  
+    spouse_ssn = ""
+  if not defined("spouse_contact_phone"):  
+    spouse_contact_phone = ""
+  if not defined("spouse_cell_phone"):  
+    spouse_cell_phone = ""
+  if not defined("spouse_email"):      
+    spouse_email = ""
+  if not defined("spouse_dl_number"):      
+    spouse_dl_number = ""
+  if not defined("spouse_dl_exp"):      
+    spouse_dl_exp = ""
+  if not defined("spouse_dl_state"):      
+    spouse_dl_state = ""
+  if not defined("spouse_address"):      
+    spouse_address = ""
+  if not defined("spouse_unit"):      
+    spouse_unit = ""
+  if not defined("spouse_city"):      
+    spouse_city = ""
+  if not defined("spouse_zip_code"):      
+    spouse_zip_code = ""
+  if not defined("spouse_county"):      
+    spouse_county = ""
+  if not defined("spouse_mail_address"):      
+    spouse_mail_address = ""
+  if not defined("spouse_mail_unit"):      
+    spouse_mail_unit = ""
+  if not defined("spouse_mail_city"):      
+    spouse_mail_city = ""
+  if not defined("spouse_mail_state"):      
+    spouse_mail_state = ""
+  if not defined("spouse_mail_zip"):      
+    spouse_mail_zip = ""
+  if not defined("spouse_mail_county"):      
+    spouse_mail_county = ""
+  if not defined("spouse_reason_this_district"):
+    spouse_reason_this_district = ""
+  if not defined("spouse_business_1"):  
+    spouse_business_1 = ""
+  if not defined("spouse_business_2"):
+    spouse_business_2 = ""
   finished_doc

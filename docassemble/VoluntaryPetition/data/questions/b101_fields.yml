@@ -5,162 +5,253 @@ event: some_event
 attachment:
   - name: b_101
     filename: b_101
-    pdf template file: vol_petition_fixed_fields.pdf
+    pdf template file: b101_modified.pdf
     fields:
-      - "Bankruptcy District Information": District of Nebraska
-      - "Case number1": something
-      - "CheckBox Chapter 7": No
+      # fix district info
+      - "Bankruptcy District Information": District of Nebraska 
+      - "Case number Page1":
+      - "CheckBox Chap7": Yes
       - "CheckBox Amended Filing": No
+      - "CheckBox Chap11": No
+      - "CheckBox Chap12": No
+      - "CheckBox Chap13": No
       - "Debtor1 First name": ${ first_name }
-      - "Debtor2.First name": something
-      - "Debtor1 Middle name": something
-      - "Debtor2.Middle name_2": something
-      - "Debtor1 Last name": something
-      - "Debtor2.Last name": something
-      - "Debtor1 Suffix Sr Jr II III": something
-      - "Suffix Sr Jr II III_2": something
-      - "Debtor1.First name_3": something
-      - "Debtor2.First name_4": something
-      - "Debtor1.Middle name_3": something
-      - "Debtor2.Middle name_4": something
-      - "Debtor2.Last name_4": something
-      - "Debtor1.Last name_3": something
-      - "Debtor2.First name_6": something
-      - "Debtor1.First name_5": something
-      - "Debtor2.Middle name_6": something
-      - "Debtor1.Middle name_5": something
-      - "Debtor2.Last name_6": something
-      - "Debtor1.Last name_5": something
-      - "Debtor2.Business name": something
-      - "Debtor1.Business name": something
-      - "Debtor2.Business name_4": something
-      - "Debtor1.Business name_3": something
-      - "Debtor2 SSNum": something
-      - "Debtor1.SSNum": something
-      - "Debtor1 Tax Payer IDNum": something
-      - "Debtor2.Tax Payer IDNum": something
-      - "Debtor1.Name": something
-      - "Debtor2.Employer Identification Number1": something
-      - "Debtor1.Employer Identification Number1": something
-      - "Debtor2 Employer Identification Number2": something
-      - "Debtor1.Employer Identification Number2": something
-      - "Debtor1.Street": something
-      - "Debtor2.Street": something
-      - "Debtor2.Street2": something
-      - "Debtor1.Street1": something
-      - "Debtor2.State": something
-      - "Debtor2.ZIP": something
-      - "Debtor1.State": something
-      - "Debtor1.City": something
-      - "Debtor1.ZIP Code": something
-      - "Debtor2.City": something
-      - "County_2": something
-      - "Debtor1.County": something
-      - "Debtor1.Street_2": something
-      - "Debtor2.Street_2": something
-      - "Debtor1.PO Box": something
-      - "Debtor2.PO Box": something
-      - "Debtor2.City_2": something
-      - "Debtor2.State_2": something
-      - "ZIP Code_4": something
-      - "Debtor1.ZIP Code_2": something
-      - "Debtor1.State_2": something
-      - "Debtor1.City_2": something
-      - "Check Box5": No
-      - "Check Box6": No
-      - "Debtor1.See 28 USC  1408 1": something
-      - "Debtor2.See 28 USC  1408 1_2": something
-      - "Debtor2.See 28 USC  1408 2_2": something
-      - "Debtor1.See 28 USC  1408 2": something
-      - "Debtor1.See 28 USC  1408 3": something
-      - "Debtor2.See 28 USC  1408 3_2": something
-      - "Debtor1.See 28 USC  1408 4": something
-      - "Debtor2.See 28 USC  1408 4_2": something
-      - "Check Box1": No
-      - "Check Box7": No
-      - "Check Box8": No
-      - "District": something
-      - "When": something
-      - "Case number": something
-      - "District_2": something
-      - "When_2": something
-      - "Case number_2": something
-      - "District_3": something
-      - "When_3": something
-      - "Case number_3": something
-      - "Check Box9": No
-      - "Debtor": something
-      - "Relationship to you": something
-      - "District_4": something
-      - "When_4": something
-      - "Case number if known_3": something
-      - "Debtor_2": something
-      - "Relationship to you_2": something
-      - "District_5": something
-      - "When_5": something
-      - "Case number if known_4": something
-      - "Check Box10": No
-      - "Check Box11": No
-      - "Check Box12": No
-      - "Name of business if any": something
-      - "Business Street address": something
-      - "Business Street address2": something
-      - "Business City": something
-      - "Business State": something
-      - "ZIP Code_5": something
-      - "Check Box13": No
-      - "Check Box14": No
-      - "Check Box15": No
-      - "What is the hazard1": something
-      - "What is the hazard2": something
-      - "If immediate attention is needed why is it needed1": something
-      - "If immediate attention is needed why is it needed2": something
-      - "Street_6": something
-      - "Street_7": something
-      - "City_2": something
-      - "State_6": something
-      - "ZIP Code_6": something
-      - "Check Box16": No
-      - "Check Box17": No
-      - "Check Box16A": No
-      - "Check Box17A": No
-      - "Check Box18": No
-      - "Check Box19": No
-      - "16c State the type of debts you owe that are not consumer debts or business debts": something
-      - "Check Box20": No
-      - "Check Box20A": No
-      - "Check Box21": No
-      - "Check Box22": No
-      - "Check Box23": No
-      - "Debtor1.signature": something
-      - "Debtor2.signature": something
-      - "Debtor2.Executed on": something
-      - "Executed on": something
-      - "Attorney.Sig": something
-      - "Attorney.Date signed": something
-      - "Attorney.Printed name": something
-      - "Attorney.Firm name": something
-      - "Attorney.Street address_2": something
-      - "Attorney.Street address_3": something
-      - "Attorney.City": something
-      - "Attorney.State": something
-      - "Attorney.Zip": something
-      - "Attorney.phone": something
-      - "Attorney.Email address": something
-      - "Attorney.Bar number": something
-      - "Attorney.Bar State": something
-      - "Check Box24": No
-      - "Check Box25": No
-      - "Check Box26": No
-      - "Name of person payed to help file": something
-      - "Debtor1.Signature": something
-      - "Debtor2.Signature": something
-      - "Debtor1.Date signed": something
-      - "Debtor2.Date signed": something
-      - "Debtor1.Contact phone_2": something
-      - "Debtor2.Contact phone": something
-      - "Debtor1.Cell phone": something
-      - "Debtor2.Cell phone": something
-      - "Debtor1.Email address_2": something
-      - "Debtor2.Email address": something
+      - "Debtor2 First name": ${ spouse_first_name}
+      - "Debtor1 Middle name": ${ middle_name }
+      - "Debtor2 Middle name": ${ spouse_middle_name}
+      - "Debtor1 Last name": ${ last_name }
+      - "Debtor2 Last name": ${ spouse_last_name }
+      - "Debtor1 Suffix Sr Jr II III": ${ suffix }
+      - "Debtor2 Suffix Sr Jr II III": ${ spouse_suffix }
+        # the interview is going to need to split first/middle/last to fit form
+      - "Debtor1 Alias1 First name": 
+      - "Debtor2 Alias1 First name": 
+      - "Debtor1 Alias1 Middle name": 
+      - "Debtor2 Alias1 Middle name": 
+      - "Debtor2 Alias1 Last name": 
+      - "Debtor1 Alias1 Last name": 
+      - "Debtor2 Alias2 First name":
+      - "Debtor1 Alias2 First name": 
+      - "Debtor1 Alias2 Middle name": 
+      - "Debtor1 Alias2 Last name": 
+      - "Debtor2 Business1 name": ${ spouse_business_1}
+      - "Debtor1 Business1 name": ${ business_1 }
+      - "Debtor2 Business2 name": ${ spouse_business_2}
+      - "Debtor1 Business2 name": ${ business_2 }
+      - "Debtor2 SSNum": ${ spouse_ssn[-4:] }
+      - "Debtor1 SSNum": ${ ssn[-4:] }
+      - "Debtor1 Tax Payer IDNum": 
+      - "Debtor2 Tax Payer IDNum": 
+      - "Debtor1 FullName Page2": ${ first_name } ${ middle_name } ${ last_name } ${ suffix }
+      - "Case number Page2": 
+      - "Debtor2 EIN1": 
+      - "Debtor1 EIN1": 
+      - "Debtor2 EIN2": 
+      - "Debtor1 EIN2": 
+      - "Debtor1 Street": ${ address }
+      - "Debtor2 Street": 
+      - "Debtor2 Unit": 
+      - "Debtor1 Unit": ${ unit }
+      - "Debtor2 State": 
+      - "Debtor2 ZIP Code": 
+      - "Debtor1 State": ${ state }
+      - "Debtor1 City": ${ city }
+      - "Debtor1 ZIP Code": ${ zip_code }
+      - "Debtor2 City": 
+      - "Debtor2 County": 
+      - "Debtor1 County": 
+      - "Debtor1 Mail Street": 
+      - "Debtor2 Mail Street": 
+      - "Debtor1 Mail POBox": 
+      - "Debtor2 Mail POBox": 
+      - "Debtor2 Mail City": 
+      - "Debtor2 Mail State": 
+      - "Debtor2 Mail ZIP Code": 
+      - "Debtor1 Mail Zip Code": 
+      - "Debtor1 Mail State": 
+      - "Debtor1 Mail City": 
+      - "Debtor1 Resident180": No
+      - "Debtor2 Resident180": 
+      - "Debtor1 Resident Explain Check": No
+      - "Debtor2 Resident Explain Checkbox": 
+      - "Debtor1 Resident Explain1": 
+      - "Debtor2 Resident Explain1": 
+      - "Debtor2 Resident Explain2": 
+      - "Debtor1 Resident Explain2": 
+      - "Debtor1 Resident Explain 3": 
+      - "Debtor2 Resident Explain3": 
+      - "Debtor1 Resident Explain4": 
+      - "Debtor2 Resident Explain4": 
+      - "Debtor1 FullName Page3":  ${ first_name } ${ middle_name } ${ last_name } ${ suffix }
+      - "Case number Page3": 
+      - "Page3 Checkbox Chap7": Yes
+      - "Page3 Checkbox Chapter11": No
+      - "Page3 Checkbox Chapter12": No
+      - "Page3 Checkbox Chapter13": No
+      # need to add questions asking how they want to pay
+      - "Page3 Checkbox FullFee": No
+      - "Page3 CheckBox Installments": No
+      - "Page3 Checkbox WaiveFee": No
+      - "Page3 Checkbox Recent BKCY No": No
+      - "Page3 Checkbox Recent Bkcy Yes": No
+        #need to ask questions for prior bankruptcies 2 and 3. 
+      - "Prior Bkcy1 District": prior_bkcy_district
+      - "Prior Bkcy1 Date": prior_bkcy_filed_date
+      - "Prior Bkcy1 CaseNum": prior_bkcy_case_number
+      - "Prior Bkcy2 District": 
+      - "Prior Bkcy2 Date": 
+      - "Prior Bkcy2 CaseNum": 
+      - "Prior Bkcy3 District": 
+      - "Prior Bkcy3 Date": 
+      - "Prior Bkcy3 CaseNum":
+      - "Page3 CB Associate Bkcy No": No
+      - "Associate Debtor1 Bkcy Name": 
+      - "Associate Debtor1 Bkcy Rel": 
+      - "Page3 CB Associate Bkcy Yes": No
+      - "Associate Debtor1 Bkcy District": 
+      - "Associate Debtor1 Bkcy Date": 
+      - "Associate Debtor1 Bkcy CaseNum": 
+      - "Associate Debtor2 Bkcy Name": 
+      - "Associate Debtor2 Bcky Rel": 
+      - "Associate Debtor2 Bkcy District": 
+      - "Associate Debtor2 Bkcy Date": 
+      - "Associate Debtor2 Bkcy CaseNum": 
+      - "Page3 CB DoYouRent No": No
+      - "Page3 CB DoYouRent Yes": No
+      - "Page3 CB Eviction No": No
+      - "Page3 CB Eviction Yes": No
+      - "Debtor1 FullName Page4":  ${ first_name } ${ middle_name } ${ last_name } ${ suffix }
+      - "Debtor1 CaseNum Page4": 
+      - "Page4 CB SoleProb No": No
+      - "Page4 CB SoleProb Yes": No
+      - "SoleProp Name": 
+      - "SoleProp Address": 
+      - "SoleProp Unit": 
+      - "SoleProp City": 
+      - "SoleProp State": 
+      - "SoleProp Zip Code": 
+      - "SoleProp CB Health": No
+      - "SoleProp CB Real Estate": No
+      - "SoleProp CB Stockbroker": No
+      - "SoleProp CB Commodity Broker": No
+      - "SoleProp CB NoneAbove Biz": No
+      - "Page4 Chap11 CB No": No
+      - "Page4 Chap11 CB NotSmallBiz": No
+      - "Page4 Chap11 CB SmallBiz": No
+      - "Page4 Chap11 CB SubchapV": No
+      - "Debtor1 FullName Page5":  ${ first_name } ${ middle_name } ${ last_name } ${ suffix }
+      - "Debtor1 CaseNum Page5": 
+      - "Hazardous CB No": No
+      - "Hazardous CB Yes": No
+      - "What is the hazard1": 
+      - "What is the hazard2": 
+      - "If immediate attention is needed why is it needed1": 
+      - "If immediate attention is needed why is it needed2": 
+      - "Hazard Street": 
+      - "Hazard Unit": 
+      - "Hazard City": 
+      - "Hazard State": 
+      - "Hazard Zip Code": 
+      - "Debtor1 FullName Page6":  ${ first_name } ${ middle_name } ${ last_name } ${ suffix }
+      - "Debtor1 CaseNum Page6": 
+      - "Debtor1 Page6 CB CC Recvd Cert": No
+      - "Debtor2 Page6 CB CC Recvd Cert": No
+      - "Debtor1 Page6 CB CC Recvd NoCert": No
+      - "Debtor2 Page6 CB CC Recvd NoCert": No
+      - "Debtor1 Page6 CB CC Exigent": No
+      - "Debtor2 Page6 CB CC Exigent": No
+      - "Debtor1 Page6 CB CC Excused": No
+      - "Debtor2 Page6 CB CC Excused": No
+      - "Debtor1 Page6 CB CC Exc Mental": No
+      - "Debtor2 Page6 CB CC Exc Mental": No
+      - "Debtor1 Page6 CB CC Exc Phys": No
+      - "Debtor2 Page6 CB CC Exc Phys": No
+      - "Debtor1 Page6 CB CC Exc Mil": No
+      - "Debtor2 Page6 CB CC Exc Mil": No
+      - "Debtor1 FullName Page7":  ${ first_name } ${ middle_name } ${ last_name } ${ suffix }
+      - "Debtor1 CaseNum Page7": 
+      - "Page7 CB Primarily Consumer No": No
+      - "Page7 CB Primarily Consumer Yes": No
+      - "Page7 CB Primarily Business No": No
+      - "Page7 CB Primarily Business Yes": No
+      - "Page 7 Describe NonBusiness NonConsumer Debt": 
+      - "Page7 Chapter7 No": No
+      - "Page7 Chapter7 Yes": No
+      - "Page7 Estimate Distribution No": No
+      - "Page7 Estimate Distribution Yes": No
+      - "Creditors Num 1 49": No
+      - "Creditors Num 1k 5k": No
+      - "Creditors Num 25k 50k": No
+      - "Creditors Num 50 99": No
+      - "Creditors Num 5k 10k": No
+      - "Creditors Num 50k 100k": No
+      - "Creditors Num 100 199": No
+      - "Creditors Num 10k 25k": No
+      - "Creditors Num gt 100k": No
+      - "Creditors Num 200 999": No
+      - "Assets 0 50k": No
+      - "assets 1m 10m": No
+      - "assets 500m 1b": No
+      - "assets 50k 100k": No
+      - "assets 10m 50m": No
+      - "assets 1b 10b": No
+      - "assets 100k 500k": No
+      - "assets 50m 100m": No
+      - "assets 10b 50b": No
+      - "assets 500k 1m": No
+      - "assets 100m 500m": No
+      - "assets gt 50b": No
+      - "liab 0 50k": No
+      - "liab 1m 10m": No
+      - "liab 500m 1b": No
+      - "liab 50k 100k": No
+      - "liab 10m 50m": No
+      - "liab 1b 10b": No
+      - "liab 100k 500k": No
+      - "liab 50m 100m": No
+      - "liab 10b 50b": No
+      - "liab 100m 500m": No
+      - "liab gt 50b": No
+      - "page7 debtor1 signature": 
+      - "Debtor2.signature": 
+      - "page7 debtor2 sign date": 
+      - "page7 debtor1 sign date": 
+      - "Debtor1 FullName Page8":  ${ first_name } ${ middle_name } ${ last_name } ${ suffix }
+      - "Debtor1 CaseNum Page8": 
+      - "Attorney Sig": 
+      - "Attorney Date signed": 
+      - "Attorney Printed name": 
+      - "Attorney Firm name": 
+      - "Attorney Street address": 
+      - "Attorney Unit": 
+      - "Attorney City": 
+      - "Attorney State": 
+      - "Attorney Zip Code": 
+      - "Attorney phone": 
+      - "Attorney Email address": 
+      - "Attorney Bar number": 
+      - "Attorney Bar State": 
+      - "Debtor1 CaseNum Page9":  ${ first_name } ${ middle_name } ${ last_name } ${ suffix }
+      - "Debtor1 FullName Page9": 
+      - "Aware Bkcy Serious No": No
+      - "Aware Bkcy Serious Yes": No
+      - "Aware FraudIsCrime No": No
+      - "Aware FraudIsCrime Yes": No
+      - "Paid Preparer No": No
+      - "Paid Preparer Yes": No
+      - "Paid Preparer Name": 
+      - "Debtor1 Sig Page9": 
+      - "Debtor2 Sig Page9": 
+      - "Debtor1 Sig Date Page9": 
+      - "Debtor2 Sig Date Page9": 
+      - "Debtor1 Contact phone Page9": ${ contact_phone }
+      - "Debtor2 Contact phone Page9": ${ spouse_contact_phone }
+      - "Debtor1 Cell phone Page9": ${ cell_phone }
+      - "Debtor2 Cell phone Page9": ${ spouse_cell_phone }
+      - "Debtor1 Email address Page9": ${ email }
+      - "Debtor2 Email address Page9": ${ spouse_email }
+      - "Button.Print1": No
+      - "Button.SaveAs": No
+      - "attach": No
+      - "Button.Reset": No
 ---
