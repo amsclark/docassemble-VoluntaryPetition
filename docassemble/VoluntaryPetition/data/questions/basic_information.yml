@@ -55,6 +55,7 @@ fields:
     default: 22222
   - County: county
     default: Douglas County
+    code: county_list
   # MAILING ADDRESS
   - note: <strong>Mailing Address </strong><hr>
     js show if: val("mailing_different") == "1"

@@ -9,12 +9,7 @@ attachment:
     fields:
       # fix district info
       - "Bankruptcy District Information": District of Nebraska 
-      - "Case number Page1":
       - "CheckBox Chap7": Yes
-      - "CheckBox Amended Filing": No
-      - "CheckBox Chap11": No
-      - "CheckBox Chap12": No
-      - "CheckBox Chap13": No
       - "Debtor1 First name": ${ first_name }
       - "Debtor2 First name": ${ spouse_first_name}
       - "Debtor1 Middle name": ${ middle_name }
@@ -40,26 +35,27 @@ attachment:
       - "Debtor1 Business2 name": ${ business_2 }
       - "Debtor2 SSNum": ${ spouse_ssn[-4:] }
       - "Debtor1 SSNum": ${ ssn[-4:] }
+      # would we ever have users without an SSN?
       - "Debtor1 Tax Payer IDNum": 
       - "Debtor2 Tax Payer IDNum": 
       - "Debtor1 FullName Page2": ${ first_name } ${ middle_name } ${ last_name } ${ suffix }
-      - "Case number Page2": 
+      # We need to split the questions up. Right now it asks about "Business name or EIN". Needs to be separate. 
       - "Debtor2 EIN1": 
       - "Debtor1 EIN1": 
       - "Debtor2 EIN2": 
       - "Debtor1 EIN2": 
       - "Debtor1 Street": ${ address }
-      - "Debtor2 Street": 
-      - "Debtor2 Unit": 
+      - "Debtor2 Street": ${ spouse_address }
+      - "Debtor2 Unit": ${ spouse_unit }
       - "Debtor1 Unit": ${ unit }
-      - "Debtor2 State": 
-      - "Debtor2 ZIP Code": 
+      - "Debtor2 State": ${ spouse_state }
+      - "Debtor2 ZIP Code": ${ spouse_zip_code}
       - "Debtor1 State": ${ state }
       - "Debtor1 City": ${ city }
       - "Debtor1 ZIP Code": ${ zip_code }
-      - "Debtor2 City": 
-      - "Debtor2 County": 
-      - "Debtor1 County": 
+      - "Debtor2 City": ${ spouse_city}
+      - "Debtor2 County": ${ county }
+      - "Debtor1 County": ${ spouse_county }
       - "Debtor1 Mail Street": 
       - "Debtor2 Mail Street": 
       - "Debtor1 Mail POBox": 
@@ -83,17 +79,13 @@ attachment:
       - "Debtor1 Resident Explain4": 
       - "Debtor2 Resident Explain4": 
       - "Debtor1 FullName Page3":  ${ first_name } ${ middle_name } ${ last_name } ${ suffix }
-      - "Case number Page3": 
       - "Page3 Checkbox Chap7": Yes
-      - "Page3 Checkbox Chapter11": No
-      - "Page3 Checkbox Chapter12": No
-      - "Page3 Checkbox Chapter13": No
       # need to add questions asking how they want to pay
-      - "Page3 Checkbox FullFee": No
-      - "Page3 CheckBox Installments": No
-      - "Page3 Checkbox WaiveFee": No
-      - "Page3 Checkbox Recent BKCY No": No
-      - "Page3 Checkbox Recent Bkcy Yes": No
+      - "Page3 Checkbox FullFee": 
+      - "Page3 CheckBox Installments": 
+      - "Page3 Checkbox WaiveFee": 
+      - "Page3 Checkbox Recent BKCY No": 
+      - "Page3 Checkbox Recent Bkcy Yes": 
         #need to ask questions for prior bankruptcies 2 and 3. 
       - "Prior Bkcy1 District": prior_bkcy_district
       - "Prior Bkcy1 Date": prior_bkcy_filed_date
@@ -121,7 +113,6 @@ attachment:
       - "Page3 CB Eviction No": No
       - "Page3 CB Eviction Yes": No
       - "Debtor1 FullName Page4":  ${ first_name } ${ middle_name } ${ last_name } ${ suffix }
-      - "Debtor1 CaseNum Page4": 
       - "Page4 CB SoleProb No": No
       - "Page4 CB SoleProb Yes": No
       - "SoleProp Name": 
@@ -140,7 +131,6 @@ attachment:
       - "Page4 Chap11 CB SmallBiz": No
       - "Page4 Chap11 CB SubchapV": No
       - "Debtor1 FullName Page5":  ${ first_name } ${ middle_name } ${ last_name } ${ suffix }
-      - "Debtor1 CaseNum Page5": 
       - "Hazardous CB No": No
       - "Hazardous CB Yes": No
       - "What is the hazard1": 
@@ -153,7 +143,6 @@ attachment:
       - "Hazard State": 
       - "Hazard Zip Code": 
       - "Debtor1 FullName Page6":  ${ first_name } ${ middle_name } ${ last_name } ${ suffix }
-      - "Debtor1 CaseNum Page6": 
       - "Debtor1 Page6 CB CC Recvd Cert": No
       - "Debtor2 Page6 CB CC Recvd Cert": No
       - "Debtor1 Page6 CB CC Recvd NoCert": No
@@ -169,7 +158,6 @@ attachment:
       - "Debtor1 Page6 CB CC Exc Mil": No
       - "Debtor2 Page6 CB CC Exc Mil": No
       - "Debtor1 FullName Page7":  ${ first_name } ${ middle_name } ${ last_name } ${ suffix }
-      - "Debtor1 CaseNum Page7": 
       - "Page7 CB Primarily Consumer No": No
       - "Page7 CB Primarily Consumer Yes": No
       - "Page7 CB Primarily Business No": No
@@ -217,29 +205,24 @@ attachment:
       - "page7 debtor2 sign date": 
       - "page7 debtor1 sign date": 
       - "Debtor1 FullName Page8":  ${ first_name } ${ middle_name } ${ last_name } ${ suffix }
-      - "Debtor1 CaseNum Page8": 
-      - "Attorney Sig": 
-      - "Attorney Date signed": 
-      - "Attorney Printed name": 
-      - "Attorney Firm name": 
-      - "Attorney Street address": 
-      - "Attorney Unit": 
-      - "Attorney City": 
-      - "Attorney State": 
-      - "Attorney Zip Code": 
-      - "Attorney phone": 
-      - "Attorney Email address": 
-      - "Attorney Bar number": 
-      - "Attorney Bar State": 
-      - "Debtor1 CaseNum Page9":  ${ first_name } ${ middle_name } ${ last_name } ${ suffix }
-      - "Debtor1 FullName Page9": 
-      - "Aware Bkcy Serious No": No
-      - "Aware Bkcy Serious Yes": No
-      - "Aware FraudIsCrime No": No
-      - "Aware FraudIsCrime Yes": No
-      - "Paid Preparer No": No
-      - "Paid Preparer Yes": No
-      - "Paid Preparer Name": 
+      # - "Attorney Sig": 
+      # - "Attorney Date signed": 
+      # - "Attorney Printed name": 
+      # - "Attorney Firm name": 
+      # - "Attorney Street address": 
+      # - "Attorney Unit": 
+      # - "Attorney City": 
+      # - "Attorney State": 
+      # - "Attorney Zip Code": 
+      # - "Attorney phone": 
+      # - "Attorney Email address": 
+      # - "Attorney Bar number": 
+      # - "Attorney Bar State": 
+      - "Debtor1 FullName Page9": ${ first_name } ${ middle_name } ${ last_name } ${ suffix }
+      - "Aware Bkcy Serious Yes": Yes
+      - "Aware FraudIsCrime Yes": Yes
+      # this one isn't filling right. Why?
+      - "Paid Preparer No": Yes
       - "Debtor1 Sig Page9": 
       - "Debtor2 Sig Page9": 
       - "Debtor1 Sig Date Page9": 

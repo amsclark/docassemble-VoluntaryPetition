@@ -8,6 +8,7 @@ metadata:
 ---
 modules:
   - .courts_list
+  - .county_list
 ---
 features:
   javascript: datereplace.js
@@ -55,6 +56,8 @@ code: |
     cell_phone = ""
   if not defined("email"):    
     email = ""
+  if not defined("county"):
+    county = ""
   # SPOUSE FIELDS
   if not defined("spouse_first_name"):  
     spouse_first_name = ""
@@ -106,4 +109,6 @@ code: |
     spouse_business_1 = ""
   if not defined("spouse_business_2"):
     spouse_business_2 = ""
+  if not defined("spouse_county"):
+    spouse_county = ""
   finished_doc
